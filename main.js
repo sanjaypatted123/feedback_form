@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    //creating new formData and getting all data from form
     const formData = new FormData(form);
     const feedback = {
       name: formData.get('full-name'),
@@ -60,7 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
   async function handleFileUploads(files) {
     try {
       for (const file of files) {
-        if (!file.name) continue;
+        if (!file.name){
+          continue;
+        } 
         console.log(`Uploading ${file.name}...`);
         await new Promise(resolve => setTimeout(resolve, 500));
       }
