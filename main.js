@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const allFeedbacks = []; //to store feedbacks
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    e.preventDefault();//just to avoid the page reload or diversion
 
     //creating new formData and getting all data from form
     const formData = new FormData(form);
