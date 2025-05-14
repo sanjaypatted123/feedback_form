@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Feedback Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Smart Feedback Dashboard</h1>
+
+  <!-- Feedback Form -->
+  <form id="feedback-form">
+
+    <!--for name-->
+    <label for="full-name">Full Name:</label>
+    <input type="text" id="full-name" name="full-name" required>
+
+    <!--for email-->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <!--for subject-->
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required>
+
+    <!--for description of feedback-->
+    <label for="description">Description (min 50 characters):</label>
+    <textarea id="description" name="description" rows="5" minlength="50" required></textarea>
+
+    <!--for rating-->
+    <label for="rating">Rating:</label>
+    <select id="rating" name="rating" required>
+      <option value="">Select...</option>
+      <option value="1">1 Star</option>
+      <option value="2">2 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5">5 Stars</option>
+    </select>
+
+    <!--for tags-->
+    <label for="tags">Tags (comma-separated):</label>
+    <input type="text" id="tags" name="tags">
+
+    <!--for file uploads-->
+    <label for="files">Upload Files (max 3, each &lt; 5MB):</label>
+    <input type="file" id="files" name="files" accept=".jpg,.jpeg,.png,.pdf" multiple>
+
+    <br/><br/>
+    <button type="submit">Submit Feedback</button>
+  </form>
+
+  <!-- Search Bar -->
+  <input type="text" id="search-bar" placeholder="Search feedback..." />
+  <div id="loader">Searching...</div>
+
+  <!-- Feedback List -->
+  <ul id="feedback-list"></ul>
+
+  <script src="main.js"></script>
+</body>
+</html>
